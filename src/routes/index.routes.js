@@ -11,7 +11,8 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params
     try {
         const projectId = await projectModel.findById(id)
-        projectId.length ?
+        console.log(projectId);
+        projectId?.name?.length?
             res.json(projectId) :
             res.json({ message: "Project not found" })
 
